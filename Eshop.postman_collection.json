@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "05cabfc3-c1d5-4038-bb48-1f573e900164",
+		"name": "Eshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5028262"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\":\"New Product A\",\r\n    \"Category\":[\"c1\",\"c2\"],\r\n    \"Description\": \"Description of Product A\",\r\n    \"ImageFile\":\"ImageFile  Product A\",\r\n    \"Price\": 998\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5050/products",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5050/products",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
