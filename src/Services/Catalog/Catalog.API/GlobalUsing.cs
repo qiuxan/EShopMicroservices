@@ -7,3 +7,6 @@ global using BuildingBlocks.CQRS;
 global using Catalog.API.Models;
 global using Catalog.API.Exceptions;
 global using Catalog.API.Products.GetProducts;
+
+global using FluentValidation;
+//validation for the http request
