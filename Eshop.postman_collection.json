@@ -80,7 +80,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"New Product A\",\r\n    \"Category\": [\"c1\", \"c2\"],\r\n    \"Description\": \"Description Product A\",\r\n    \"ImageFile\": \"ImageFile Product A\",\r\n    \"Price\": 199\r\n}",
+							"raw": "{\r\n    \"Name\": \"New Product DDD\",\r\n    \"Category\": [\"c1\", \"c2\"],\r\n    \"Description\": \"Description Product DDDA\",\r\n    \"ImageFile\": \"ImageFile Product DDD\",\r\n    \"Price\": 199\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -106,7 +106,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Id\": \"018d2605-1fef-4cbf-b9b4-cbf999a85cc1\",\r\n    \"Name\": \"New Product A Updated\",\r\n    \"Category\": [\"c1\", \"c2\", \"cUpdated\"],\r\n    \"Description\": \"Description Product A Updated\",\r\n    \"ImageFile\": \"ImageFile Product A Updated\",\r\n    \"Price\": 299\r\n}",
+							"raw": "{\r\n    \"Id\": \"01918823-e987-49ee-8fc6-00ff040dc504\",\r\n    \"Name\": \"New Product A Updated3\",\r\n    \"Category\": [\"c1\", \"c2\", \"cUpdated3\"],\r\n    \"Description\": \"Description Product A Updated3\",\r\n    \"ImageFile\": \"ImageFile Product A Updated3\",\r\n    \"Price\": 399\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
