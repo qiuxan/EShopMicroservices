@@ -42,13 +42,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{catalog_url}}/products/01917dd4-4883-42c5-8232-b45349368837",
+							"raw": "{{catalog_url}}/products/01918c6c-c286-456f-97df-540ecd222a1d",
 							"host": [
 								"{{catalog_url}}"
 							],
 							"path": [
 								"products",
-								"01917dd4-4883-42c5-8232-b45349368837"
+								"01918c6c-c286-456f-97df-540ecd222a1d"
 							]
 						}
 					},
@@ -131,13 +131,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{catalog_url}}/products/018d2605-1fef-4cbf-b9b4-cbf999a85cc1",
+							"raw": "{{catalog_url}}/products/01918c6c-c286-456f-97df-540ecd222a1d",
 							"host": [
 								"{{catalog_url}}"
 							],
 							"path": [
 								"products",
-								"018d2605-1fef-4cbf-b9b4-cbf999a85cc1"
+								"01918c6c-c286-456f-97df-540ecd222a1d"
 							]
 						}
 					},
