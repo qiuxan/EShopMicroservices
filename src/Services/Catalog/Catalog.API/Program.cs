@@ -1,9 +1,12 @@
+using BuildingBlocks.Behaviors;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //add services to the container
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config => {
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    config.AddOpenBehavior(typeof(ValidationBehavior<,>)); //register the validation behavior as a pipeline behavior
 });
 
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
