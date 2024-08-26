@@ -19,8 +19,8 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 
 internal class CreateProductCommandHandler
     (
-        IDocumentSession session,
-        IValidator<CreateProductCommand> validator
+        ILogger<CreateProductCommandHandler> logger,
+        IDocumentSession session
     )
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
@@ -28,13 +28,9 @@ internal class CreateProductCommandHandler
     {
         //Business logic to create a product
 
-        //create a product entity from the command object
+        logger.LogInformation("CreateProductCommandHandler called with {@Command}", command);
 
-        var validationResult = await validator.ValidateAsync(command, cancellationToken);
-        var errors = validationResult.Errors.Select(x => x.ErrorMessage).ToList();
-        if (errors.Any()) {
-            throw new ValidationException(errors.FirstOrDefault());
-        }
+        //create a product entity from the command object
 
         var product = new Product
         {

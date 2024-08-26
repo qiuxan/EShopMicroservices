@@ -3,13 +3,17 @@ using BuildingBlocks.Behaviors;
 var builder = WebApplication.CreateBuilder(args);
 
 //add services to the container
-builder.Services.AddCarter();
+
+var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(config => {
-    config.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    config.RegisterServicesFromAssembly(assembly);
     config.AddOpenBehavior(typeof(ValidationBehavior<,>)); //register the validation behavior as a pipeline behavior
 });
 
-builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+builder.Services.AddValidatorsFromAssembly(assembly);
+
+builder.Services.AddCarter();
+
 
 builder.Services.AddMarten(opts => {
 
