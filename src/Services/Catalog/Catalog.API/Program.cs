@@ -7,6 +7,7 @@ var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(config => {
     config.RegisterServicesFromAssembly(assembly);
     config.AddOpenBehavior(typeof(ValidationBehavior<,>)); //register the validation behavior as a pipeline behavior
+    config.AddOpenBehavior(typeof(LoggingBehavior<,>)); //register the logging behavior as a pipeline behavior
 });
 
 builder.Services.AddValidatorsFromAssembly(assembly);
