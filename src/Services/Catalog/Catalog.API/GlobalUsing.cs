@@ -9,6 +9,8 @@ global using Catalog.API.Exceptions;
 global using Catalog.API.Products.GetProducts;
 global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.Exceptions.Handler;
+global using Catalog.API.Data;
+
 
 global using FluentValidation;
 //validation for the http request
