@@ -12,12 +12,15 @@ public class DeleteBasketCommandValidator : AbstractValidator<DeleteBasketComman
         RuleFor(x => x.UserName).NotEmpty().WithMessage("UserName can not be empty");
     }
 }
-public class DeleteBasketCommandHandler : ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
+public class DeleteBasketCommandHandler
+    (
+        IBasketRepository repository
+    )
+    : ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
 {
     public async Task<DeleteBasketResult> Handle(DeleteBasketCommand command, CancellationToken cancellationToken)
     {
-        //to do: delete basket from db and cache
-        // session.DeleteBasketAsync(command.UserName);
+        await repository.DeleteBasket(command.UserName,cancellationToken);
 
         return new DeleteBasketResult(true);
     }
