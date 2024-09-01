@@ -31,14 +31,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
     //options.InstanceName = "Basket";
 });
 
-
-////manually decorating the CachedBasketRepository
-//builder.Services.AddScoped<IBasketRepository>(provider =>
-//{
-//    var basketRepository = provider.GetRequiredService<BasketRepository>();
-//    return new CachedBasketRepository(basketRepository, provider.GetRequiredService<IDistributedCache>());
-//});
-
 builder.Services.AddScoped<IBasketRepository, CachedBasketRepository>();
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
