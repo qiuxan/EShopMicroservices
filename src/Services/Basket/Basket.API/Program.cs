@@ -6,12 +6,12 @@ var assembly = typeof(Program).Assembly;
 
 // Add services to the container.
 builder.Services.AddCarter();
+
 builder.Services.AddMediatR(config =>
 {
-    config.RegisterServicesFromAssemblies(assembly);
+    config.RegisterServicesFromAssembly(assembly);
     config.AddOpenBehavior(typeof(ValidationBehavior<,>));
     config.AddOpenBehavior(typeof(LoggingBehavior<,>));
-
 });
 
 builder.Services.AddMarten(options =>
@@ -30,8 +30,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration.GetConnectionString("Redis")!;
     //options.InstanceName = "Basket";
 });
-
-builder.Services.AddScoped<IBasketRepository, CachedBasketRepository>();
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
