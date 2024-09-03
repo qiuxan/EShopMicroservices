@@ -22,6 +22,7 @@ public class StoreBasketCommandHandler
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
+        //TODO: communicate with Discount.Grpc, and calculate latest prices of product into shopping cart
 
         await repository.StoreBasket(command.Cart,cancellationToken);
 
