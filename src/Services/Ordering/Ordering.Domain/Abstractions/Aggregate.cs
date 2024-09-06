@@ -1,8 +1,5 @@
-﻿
-using System.Collections.Generic;
-
-namespace Ordering.Domain.Abstractions;
-internal abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
+﻿namespace Ordering.Domain.Abstractions;
+public abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
 {
 
     private readonly List<IDomainEvent> _domainEvents = new();
