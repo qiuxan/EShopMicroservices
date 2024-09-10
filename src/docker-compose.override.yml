@@ -33,14 +33,12 @@ services:
   
   orderdb:
     container_name: orderdb
-    image: mcr.microsoft.com/mssql/server
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=iq12345678
+      - SA_PASSWORD=!iQ12345678
     restart: always
     ports:
       - "1433:1433"
-
 
   catalog.api:
     environment:
