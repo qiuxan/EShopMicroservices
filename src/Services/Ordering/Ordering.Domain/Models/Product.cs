@@ -4,7 +4,7 @@ public class Product : Entity<ProductId>
     public string Name { get; private set; } = default!;
     public decimal Price { get; private set; } = default!;
 
-    public Product Create(ProductId id, string name, decimal price)
+    public static Product Create(ProductId id, string name, decimal price)
     {
         ArgumentException.ThrowIfNullOrEmpty(name, nameof(name));
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
