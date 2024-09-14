@@ -2,7 +2,7 @@
 
 namespace Ordering.Application.Dtos;
 
-public record OderDto
+public record OrderDto
     (
         Guid Id,
         Guid CustomerId,
