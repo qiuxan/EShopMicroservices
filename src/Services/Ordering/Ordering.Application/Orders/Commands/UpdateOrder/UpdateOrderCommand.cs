@@ -1,17 +1,15 @@
 ﻿using FluentValidation;
 
-namespace Ordering.Application.Orders.Commands.CreateOrder;
-public record CreateOrderCommand(OrderDto Order)
-    :ICommand<CreateOrderResult>;
+namespace Ordering.Application.Orders.Commands.UpdateOrder;
+public record UpdateOrderCommand(OrderDto Order) : ICommand<UpdateOrderResult>;
+public record UpdateOrderResult(bool IsSuccess);
 
-public record CreateOrderResult(Guid Id);
-
-public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
+public class UpdateOrderCommandValidator : AbstractValidator<UpdateOrderCommand>
 {
-    public CreateOrderCommandValidator()
+    public UpdateOrderCommandValidator()
     {
         RuleFor(x => x.Order.OrderName).NotEmpty().WithMessage("Name is required");
         RuleFor(x => x.Order.CustomerId).NotNull().WithMessage("CustomerId is required");
         RuleFor(x => x.Order.OrderItems).NotEmpty().WithMessage("OrderItems should not be empty");
     }
-} 
+}
