@@ -12,3 +12,4 @@ global using Ordering.Domain.Events;
 
 global using Microsoft.EntityFrameworkCore;
 
+global using Ordering.Application.Extensions;
