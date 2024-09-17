@@ -6,8 +6,8 @@ public class Customer : Entity<CustomerId>
 
     public static Customer Create(CustomerId id, string name, string email)
     {
-        ArgumentException.ThrowIfNullOrEmpty(name, nameof(name));
-        ArgumentException.ThrowIfNullOrEmpty(email, nameof(email));
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        ArgumentException.ThrowIfNullOrWhiteSpace(email);
 
         var customer = new Customer
         {
@@ -18,5 +18,4 @@ public class Customer : Entity<CustomerId>
 
         return customer;
     }
-
 }

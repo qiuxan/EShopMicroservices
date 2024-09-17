@@ -14,7 +14,8 @@ internal class UpdateOrderHandler
         var orderId = OrderId.Of(command.Order.Id);
 
         var order = await dbContext.Orders
-            .FindAsync([orderId], cancellationToken:cancellationToken);
+        .Include(o => o.OrderItems) // We include OrderItems
+        .FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
 
         if (order is null)
             throw new OrderNotFoundException(command.Order.Id);
