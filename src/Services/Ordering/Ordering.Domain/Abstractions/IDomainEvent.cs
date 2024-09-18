@@ -7,5 +7,3 @@ public interface IDomainEvent : INotification
     public DateTime OccurredOn => DateTime.Now;
     public string EventType => GetType().AssemblyQualifiedName;
 }
-
-

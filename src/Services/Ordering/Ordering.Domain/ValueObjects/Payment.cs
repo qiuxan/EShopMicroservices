@@ -7,7 +7,9 @@ public record Payment
     public string CVV { get; } = default!;
     public int PaymentMethod { get; } = default!;
 
-    protected Payment() { }
+    protected Payment()
+    {
+    }
 
     private Payment(string cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
     {
@@ -20,9 +22,9 @@ public record Payment
 
     public static Payment Of(string cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(cardName, "Card Name cannot be empty.");
-        ArgumentException.ThrowIfNullOrWhiteSpace(cardNumber, "Card Number cannot be empty.");
-        ArgumentException.ThrowIfNullOrWhiteSpace(cvv, "CVV cannot be empty.");
+        ArgumentException.ThrowIfNullOrWhiteSpace(cardName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(cardNumber);
+        ArgumentException.ThrowIfNullOrWhiteSpace(cvv);
         ArgumentOutOfRangeException.ThrowIfGreaterThan(cvv.Length, 3);
 
         return new Payment(cardName, cardNumber, expiration, cvv, paymentMethod);
