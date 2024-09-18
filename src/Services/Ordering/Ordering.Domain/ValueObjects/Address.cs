@@ -11,7 +11,7 @@ public record Address
 
     protected Address() { }
 
-    public Address(string firstName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
+    private Address(string firstName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
     {
         FirstName = firstName;
         LastName = lastName;
