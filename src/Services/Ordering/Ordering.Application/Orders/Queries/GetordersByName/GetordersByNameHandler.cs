@@ -17,7 +17,7 @@ public class GetordersByNameHandler
                      .OrderBy(o => o.OrderName.Value)
                      .ToListAsync(cancellationToken);
 
-        return new GetordersByNameResult(orders.ToOrderDtos());
+        return new GetordersByNameResult(orders.ToOrderDtoList());
     }
 
 }

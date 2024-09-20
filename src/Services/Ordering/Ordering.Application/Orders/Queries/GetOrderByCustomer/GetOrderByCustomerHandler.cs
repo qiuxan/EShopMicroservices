@@ -11,7 +11,7 @@ public class GetOrderByCustomerHandler(IApplicationDbContext dbContext)
             .OrderBy(o => o.OrderName.Value)
             .ToListAsync(cancellationToken);
 
-        return new GetOrderByCustomerResult(orders.ToOrderDtos());
+        return new GetOrderByCustomerResult(orders.ToOrderDtoList());
         
     }
 }
